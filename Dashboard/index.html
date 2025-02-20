@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitChat Employee Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="logo">
+        <img src="images/logo.png" alt="ChatBit Logo">
+    </div>
+    <nav class="menu">
+        <div class="menu-item active">
+            <img src="images/Dashboard.png" alt="Dashboard">
+            <span>Dashboard</span>
+        </div>
+        <div class="menu-item">
+            <img src="images/Messages.png" alt="Messages">
+            <span>Messages</span>
+        </div>
+        <div class="menu-item">
+            <img src="images/Documents.png" alt="Documents">
+            <span>Documents</span>
+        </div>
+        <div class="menu-item">
+            <img src="images/Employees.png" alt="Employees">
+            <span>Employees</span>
+        </div>
+    </nav>
+    <div class="logout">
+        <img src="images/LogOut.png" alt="Log Out">
+        <span>Log Out</span>
+    </div>
+</div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <div class="overview-title">Overview</div>
+                <div class="search-bar">
+                    <input type="text" id="search-input"  placeholder="Search">
+                    <button><img src="images/search.png" ></button>                
+                </div>
+                <div class="user-profile">
+                    <img src="profile.jpg" alt="User Profile" class="profile-pic">
+                    <div class="user-info">
+                        <p class="username">Charles Whitaker</p>
+                        <p class="job-title">Software Engineer</p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <!-- Documents Section -->
+                <section class="documents">
+                    <div class="section-header">
+                        <h2>Documents</h2>
+                        <button class="see-all">See All</button>
+                    </div>
+                    <div class="doc-list">
+                        <div class="doc-item">
+                            <span class="doc-title">Charlotte Harrison</span>
+                            <span class="doc-type">Invoice</span>
+                        </div>
+                        <div class="doc-item">
+                            <span class="doc-title">Sophia Bennett</span>
+                            <span class="doc-type">Quotation</span>
+                        </div>
+                        <div class="doc-item">
+                            <span class="doc-title">Alexander Scott</span>
+                            <span class="doc-type">Project Proposal</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Messages Section -->
+                <section class="messages">
+                    <div class="section-header">
+                        <h2>Messages</h2>
+                        <button class="see-all">See All</button>
+                    </div>
+                    <div class="message-list">
+                        <div class="message-item">
+                            <img src="profile1.png" alt="User">
+                            <div class="message-content">
+                                <span class="name">Charlotte Harrison</span>
+                                <span class="text">Dear Charles Whitaker</span>
+                            </div>
+                            <span class="time">6:43 PM</span>
+                        </div>
+                        <div class="message-item">
+                            <img src="profile2.png" alt="User">
+                            <div class="message-content">
+                                <span class="name">Sophia Bennett</span>
+                                <span class="text">Sophia Bennett has sent you a file.</span>
+                            </div>
+                            <span class="time">6:40 AM</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- Calendar Section -->
+                 <section class="calendar">
+                    <h2 id="current-month">Loading...</h2>
+                    <div class="calendar-grid" id="calendar-grid">
+                         <!-- Days will be generated dynamically -->
+                        </div>
+                    </section>
+                    
+                    <script>
+                        function generateCalendar() {
+                            const calendarGrid = document.getElementById("calendar-grid");
+                            const currentMonth = document.getElementById("current-month");
+                    
+                            const now = new Date();
+                            const month = now.toLocaleString('default', { month: 'long' });
+                            const year = now.getFullYear();
+                    
+                            currentMonth.textContent = `${month} ${year}`;
+                    
+                            calendarGrid.innerHTML = ''; // Clear previous content
+                    
+                            const firstDay = new Date(year, now.getMonth(), 1).getDay();
+                            const daysInMonth = new Date(year, now.getMonth() + 1, 0).getDate();
+                    
+                            for (let i = 0; i < firstDay; i++) {
+                                const emptyCell = document.createElement("span");
+                                calendarGrid.appendChild(emptyCell);
+                            }
+                    
+                            for (let day = 1; day <= daysInMonth; day++) {
+                                const dayCell = document.createElement("span");
+                                dayCell.textContent = day;
+                                calendarGrid.appendChild(dayCell);
+                            }
+                        }
+                    
+                        document.addEventListener("DOMContentLoaded", generateCalendar);
+                    </script>
+                    
+                    
+                                  
+             </div>
+        </div>
+    </div>
+</body>
+</html>
