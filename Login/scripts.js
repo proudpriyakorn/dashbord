@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const loginForm = document.querySelector(".login-form");
+
+    loginForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // ป้องกันการ reload หน้าเว็บ
+        window.location.href = "../Dashboard/index.html"; // ไปที่ Dashboard
+    });
+});
 // Get input and label elements
 const idInput = document.getElementById('user-id');
 const idLabel = document.querySelector('.id-label');

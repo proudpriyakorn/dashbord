@@ -37,6 +37,7 @@ body {
     flex-grow: 1;
 }
 
+/* General styles for all menu items */
 .menu-item {
     display: flex;
     align-items: center;
@@ -46,6 +47,17 @@ body {
     transition: 0.3s;
     font-weight: 600;
     border-radius: 10px;
+}
+.menu-item--messages {
+    background-color: #112D4E;
+}
+
+.menu-item--documents {
+    background-color: #112D4E;
+}
+
+.menu-item--employees {
+    background-color: #112D4E;
 }
 
 .menu-item img {
@@ -67,17 +79,29 @@ body {
 
 /* Logout Button */
 .logout {
-    display: flex;
-    align-items: center;
+    font-weight: 700;
+    display: flex; /* Align icon and text horizontally */
+    align-items: center; /* Center vertically */
+    gap: 10px; /* Space between icon and text */
     padding: 15px;
     color: #F5EFE7;
     cursor: pointer;
+    text-decoration: none; /* Ensure it behaves like a button */
 }
 
+/* Hover Effect */
 .logout:hover {
     border-radius: 1000px;
-    background: #3F72AF;
+    background: #DBE2EF;
     transition: 0.2s;
+}
+
+/* Ensure Icon is Properly Styled */
+.logout img {
+    width: 35px; /* Adjust icon size */
+    height: auto;
+    margin-top: 7px;
+    margin-left: -17px;
 }
 
 /* ===== Main Content ===== */
