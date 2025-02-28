@@ -44,16 +44,31 @@
                     <input type="text" id="search-input"  placeholder="Search">
                     <button><img src="images/search.png" ></button>                
                 </div>
-                <div class="user-profile">
-                    <img src="profile.jpg" alt="User Profile" class="profile-pic">
-                    <div class="user-info">
-                        <p class="username">Charles Whitaker</p>
-                        <p class="job-title">Software Engineer</p>
+
+                <div class="chat-box">
+                    <!-- HR Section (Clickable) -->
+                    <div class="hr-section" id="profile-button">
+                        <div class="hr-info">
+                            <h3>Charles Whitaker</h3>
+                            <p>Human Resources Manager</p>
+                        </div>
+                        <img src="images/HR.jpg" alt="HR Manager">
                     </div>
-                </div>
+    
+                    <!-- Profile Dropdown (Initially Hidden) -->
+                    <div id="profileDropdown" class="profile-dropdown">
+                        <div class="dropdown-content">
+                            <img src="images/HR.jpg" alt="Profile" class="profile-pic">
+                            <h3>Charles Whitaker</h3>
+                            <p>Human Resources Manager</p>
+                            <p><strong>Employee ID:</strong> 256789120155</p>
+                        </div>
+                    </div>
+
             </header>
 
             <div class="dashboard-content">
+                
                 <!-- Documents Section -->
                 <section class="documents">
                     <div class="section-header">
@@ -62,19 +77,50 @@
                     </div>
                     <div class="doc-list">
                         <div class="doc-item">
-                            <span class="doc-title">Charlotte Harrison</span>
+                            <div class="doc-info">
+                                <span class="doc-title">Charlotte Harrison</span>
+                                <span class="job-description">Marketing Manager</span>
+                            </div>
                             <span class="doc-type">Invoice</span>
                         </div>
                         <div class="doc-item">
-                            <span class="doc-title">Sophia Bennett</span>
+                            <div class="doc-info">
+                                <span class="doc-title">Charlotte Harrison</span>
+                                <span class="job-description">Marketing Manager</span>
+                            </div>
+                            <span class="doc-type">Invoice</span>
+                        </div>
+                        <div class="doc-item">
+                            <div class="doc-info">
+                                <span class="doc-title">Charlotte Harrison</span>
+                                <span class="job-description">Marketing Manager</span>
+                            </div>
+                            <span class="doc-type">Invoice</span>
+                        </div>
+                        <div class="doc-item">
+                            <div class="doc-info">
+                                <span class="doc-title">Charlotte Harrison</span>
+                                <span class="job-description">Marketing Manager</span>
+                            </div>
+                            <span class="doc-type">Invoice</span>
+                        </div>
+                        <div class="doc-item">
+                            <div class="doc-info">
+                                <span class="doc-title">Sophia Bennett</span>
+                                <span class="job-description">Financial Analyst</span>
+                            </div>
                             <span class="doc-type">Quotation</span>
                         </div>
                         <div class="doc-item">
-                            <span class="doc-title">Alexander Scott</span>
+                            <div class="doc-info">
+                                <span class="doc-title">Alexander Scott</span>
+                                <span class="job-description">Project Manager</span>
+                            </div>
                             <span class="doc-type">Project Proposal</span>
-                        </div>
+                        </div>                    
                     </div>
                 </section>
+                
 
                 <!-- Messages Section -->
                 <section class="messages">
@@ -99,17 +145,100 @@
                             </div>
                             <span class="time">6:40 AM</span>
                         </div>
+                        <div class="message-item">
+                            <img src="profile2.png" alt="User">
+                            <div class="message-content">
+                                <span class="name">Sophia Bennett</span>
+                                <span class="text">Sophia Bennett has sent you a file.</span>
+                            </div>
+                            <span class="time">6:40 AM</span>
+                        </div>
+                        <div class="message-item">
+                            <img src="profile2.png" alt="User">
+                            <div class="message-content">
+                                <span class="name">Sophia Bennett</span>
+                                <span class="text">Sophia Bennett has sent you a file.</span>
+                            </div>
+                            <span class="time">6:40 AM</span>
+                        </div>
+                        <div class="message-item">
+                            <img src="profile2.png" alt="User">
+                            <div class="message-content">
+                                <span class="name">Sophia Bennett</span>
+                                <span class="text">Sophia Bennett has sent you a file.</span>
+                            </div>
+                            <span class="time">6:40 AM</span>
+                        </div>
+                        <div class="message-item">
+                            <img src="profile2.png" alt="User">
+                            <div class="message-content">
+                                <span class="name">Sophia Bennett</span>
+                                <span class="text">Sophia Bennett has sent you a file.</span>
+                            </div>
+                            <span class="time">6:40 AM</span>
+                        </div>                        <div class="message-item">
+                            <img src="profile2.png" alt="User">
+                            <div class="message-content">
+                                <span class="name">Sophia Bennett</span>
+                                <span class="text">Sophia Bennett has sent you a file.</span>
+                            </div>
+                            <span class="time">6:40 AM</span>
+                        </div>
+                        <div class="message-item">
+                            <img src="profile2.png" alt="User">
+                            <div class="message-content">
+                                <span class="name">Sophia Bennett</span>
+                                <span class="text">Sophia Bennett has sent you a file.</span>
+                            </div>
+                            <span class="time">6:40 AM</span>
+                        </div>
+                        <div class="message-item">
+                            <img src="profile2.png" alt="User">
+                            <div class="message-content">
+                                <span class="name">Sophia Bennett</span>
+                                <span class="text">Sophia Bennett has sent you a file.</span>
+                            </div>
+                            <span class="time">6:40 AM</span>
+                        </div>
+                        <div class="message-item">
+                            <img src="profile2.png" alt="User">
+                            <div class="message-content">
+                                <span class="name">Sophia Bennett</span>
+                                <span class="text">Sophia Bennett has sent you a file.</span>
+                            </div>
+                            <span class="time">6:40 AM</span>
+                        </div>
+                        <div class="message-item">
+                            <img src="profile2.png" alt="User">
+                            <div class="message-content">
+                                <span class="name">Sophia Bennett</span>
+                                <span class="text">Sophia Bennett has sent you a file.</span>
+                            </div>
+                            <span class="time">6:40 AM</span>
+                        </div>
+                    </div>
+                    
                     </div>
                 </section>
                 <!-- Calendar Section -->
-                 <section class="calendar">
-                    <h2 id="current-month">Loading...</h2>
-                    <div class="calendar-grid" id="calendar-grid">
-                         <!-- Days will be generated dynamically -->
-                        </div>
-                    </section>
-                    
+<section class="calendar">
+    <div class="calendar-header">
+        <button id="prev-month">&lt;</button> <!-- ปุ่มย้อนกลับเดือน -->
+        <h2 id="current-month">Loading...</h2>
+        <button id="next-month">&gt;</button> <!-- ปุ่มไปข้างหน้าเดือน -->
+    </div>
+    <div class="calendar-grid" id="calendar-grid">
+        <!-- Days will be generated dynamically -->
+    </div>
+</section>
+             
+                
+                
                     <script>
+                        const currentDate = new Date();
+                        console.log("Current Date:", currentDate);
+                        console.log("Year:", currentDate.getFullYear(), "Month:", currentDate.getMonth(), "Day:", currentDate.getDate());
+
                         function generateCalendar() {
                             const calendarGrid = document.getElementById("calendar-grid");
                             const currentMonth = document.getElementById("current-month");

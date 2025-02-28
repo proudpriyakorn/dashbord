@@ -1,6 +1,10 @@
+* {
+    font-family: 'Sen', sans-serif;
+}
 /* Global Styles */
 body {
     font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     margin: 0;
     padding: 0;
     display: flex;
@@ -80,6 +84,8 @@ body {
 .main-content {
     flex: 1;
     padding: 20px;
+    max-width: 100%; /* Prevent content from overflowing */
+    overflow-x: auto; /* Allow scrolling only when necessary */;
 }
 
 header {
@@ -184,6 +190,101 @@ header {
     font-size: 24px;
     margin-bottom: -80px;
 }
+.profile-dropdown {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 70px; /* Adjust positioning */
+    right: 20px;
+    width: 323px;
+    height: 200px;
+    flex-shrink: 0;
+    background: #F6FDFF;
+    border: 3px solid #112D4E;
+    border-radius: 10px 0px 10px 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    z-index: 1000;
+    transition: right 0.5s ease-in-out;
+}
+
+
+/* Profile Dropdown Content */
+.profile-dropdown .dropdown-content {
+    text-align: center;
+}
+
+/* Profile Image */
+.profile-dropdown img.profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Profile Name */
+.profile-dropdown h3 {
+    color: #112D4E;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Profile Role */
+.profile-dropdown p {
+    font-size: 14px;
+    color: #3F72AF;
+    margin-bottom: 5px;
+}
+
+/* Close Button */
+.profile-dropdown .close {
+    position: absolute;
+    bottom: 165px;
+    right: 5px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #112D4E;
+    transition: right 0.3s ease-in-out;
+}
+
+.hr-section {
+    cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+
+/* HR Section */
+.hr-section {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    background: #F6FDFF;
+    padding: 5px;
+}
+
+.hr-section img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: #5F6368 inset;
+}
+
+.hr-info h3 {
+    font-size: 16px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #112D4E;
+}
+
+.hr-info p {
+    margin-right: 20px;
+    font-size: 12px;
+    color: #3F72AF;
+    font-weight: 549;
+    line-height: normal;
+    letter-spacing: 0.36px;
+}
+
 .job-title {
     font-family: Arial, sans-serif;
     position: relative;
@@ -199,6 +300,22 @@ header {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-top: -20px; /* Moves content up slightly */
+    
+}
+.see-all {
+    background: #003366; /* Match search bar button */
+    color: white; /* Text color */
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 15px; /* Rounded corners */
+    cursor: pointer;
+    transition:  0.3s;
+}
+
+.see-all:hover {
+    background: #002855; /* Darker blue on hover */
 }
 
 /* ===== Documents Section ===== */
@@ -208,19 +325,51 @@ header {
     width: 300px;
     height: 285px;   
     padding: 15px;
+    overflow: auto; 
     border-radius: 10px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
     margin-top: 10px; /* Moves documents up */
+
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
-.doc-list .doc-item {
+.documents::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, Edge */
+}
+
+.doc-item {
     background: #003366;
     color: #DBE2EF;
-    height: 40px;
+    height: 50px; /* Increased height for job description */
     padding: 10px;
     border-radius: 8px;
     margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between; /* Push doc-type to the right */
+    align-items: center;
+    position: relative;
 }
+
+.doc-title {
+    font-weight: bold;
+    display: block;
+}
+
+.job-description {
+    font-size: 12px;
+    color: #C1D3FE; /* Lighter blue for contrast */
+    display: block;
+}
+
+.doc-type {
+    font-size: 14px;
+    color: #FFFFFF;
+    position: absolute;
+    right: 10px; /* Align to the right */
+}
+
 
 /* ===== Calendar Section ===== */
 .calendar {
@@ -231,7 +380,34 @@ header {
     border-radius: 10px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
     text-align: center;
-    margin-top: -330px; /* Moves calendar up */
+    margin-top: -310px; /* Moves calendar up */
+}
+.today {
+    background: red !important;
+    color: white !important;
+    border: 3px solid black !important;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #3F72AF;
+    padding: 0 15px;
+}
+
+#current-month {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3F72AF;
 }
 
 .calendar-grid {
@@ -239,6 +415,7 @@ header {
     grid-template-columns: repeat(7, 1fr);
     gap: 10px;
     margin-top: 10px;
+    
 }
 
 .calendar-grid span {
@@ -252,36 +429,59 @@ header {
     margin-top: 0px;
     border-radius: 50%;
     font-size: 12px;
+    
 }
-
+/* ===== Messages Section ===== */
 /* ===== Messages Section ===== */
 .messages {
     border-radius: 10px;
+    overflow: auto; 
     flex-shrink: 0;
     border: 1px solid #3D4548;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 900px;
-    height: 630px;
+    height: 620px;
     padding: 15px;
     margin-top: 10px; /* Moves messages up */
+
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
-.message-list .message-item {
+.messages::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, Edge */
+}
+
+.message-content {
     display: flex;
+    flex-direction: column; /* Stack name and text vertically */
+}
+
+.message-item {
+    display: flex;
+    justify-content: space-between; /* Align timestamp to the right */
     align-items: center;
     background: #f4f4f4;
     padding: 12px;
     border-radius: 8px;
     margin-bottom: 5px;
     transition: 0.3s;
+    width: 98%;
 }
 
-.message-list .message-item:hover {
-    background: #e0e0e0;
+.message-item .time {
+    margin-left: auto; /* Push time to the right */
+    font-size: 12px;
+    color: #666;
 }
+
 
 .message-item img {
+    border-radius: 25px;
+    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
     width: 40px;
     height: 40px;
     border-radius: 50%;
