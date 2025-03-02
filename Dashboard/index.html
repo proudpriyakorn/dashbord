@@ -10,33 +10,50 @@
 </head>
 <body>
 <!-- Sidebar -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitChat Employee Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap" rel="stylesheet">
+    <script src="scripts.js"></script>
+</head>
+<body>
+
+<!-- Sidebar -->
 <div class="sidebar">
     <div class="logo">
         <img src="images/logo.png" alt="ChatBit Logo">
     </div>
     <nav class="menu">
-        <div class="menu-item active">
+        <a href="../Dashboard/index.html" class="menu-item active">
             <img src="images/Dashboard.png" alt="Dashboard">
             <span>Dashboard</span>
-        </div>
-        <a href="../Messages/index.html" class="menu-item menu-ite--messages">
+        </a>
+
+        <a href="../Messages/index.html" class="menu-item">
             <img src="images/Messages.png" alt="Messages">
             <span>Messages</span>
-        </a>        
-        <div class="menu-item menu-item--documents">
+        </a>
+
+        <a href="../Document/index.html" class="menu-item">
             <img src="images/Documents.png" alt="Documents">
             <span>Documents</span>
-        </div>
-        <div class="menu-item menu-item--employees">
-            <img src="images/Employees.png" alt="Employees">
-            <span>Employees</span>
-        </div>
-        
+        </a>
+
+        <a href="../Employee/index.html" class="menu-item">
+            <img src="images/Employees.png" alt="Employee">
+            <span>Employee</span>
+        </a>
     </nav>
+
     <div class="logout" onclick="logout()">
         <img src="images/LogOut.png" alt="Log Out">
         <span>Log Out</span>
     </div>
+</div>
     
     <script>
     function logout() {
@@ -55,24 +72,25 @@
                 </div>
 
                 <div class="chat-box">
-                    <!-- HR Section (Clickable) -->
-                    <div class="hr-section" id="profile-button">
-                        <div class="hr-info">
-                            <h3>Charles Whitaker</h3>
-                            <p>Human Resources Manager</p>
+                    <div class="chat-box">
+                        <!-- HR Section (Clickable) -->
+                        <div class="hr-section" id="profile-button">
+                            <div class="hr-info">
+                                <h3>Charles Whitaker</h3>
+                                <p>Human Resources Manager</p>
+                            </div>
+                            <img src="images/HR.jpg" alt="HR Manager">
                         </div>
-                        <img src="images/HR.jpg" alt="HR Manager">
-                    </div>
-    
-                    <!-- Profile Dropdown (Initially Hidden) -->
-                    <div id="profileDropdown" class="profile-dropdown">
-                        <div class="dropdown-content">
-                            <img src="images/HR.jpg" alt="Profile" class="profile-pic">
-                            <h3>Charles Whitaker</h3>
-                            <p>Human Resources Manager</p>
-                            <p><strong>Employee ID:</strong> 256789120155</p>
+            
+                        <!-- Profile Dropdown (Initially Hidden) -->
+                        <div id="profileDropdown" class="profile-dropdown">
+                            <div class="dropdown-content">
+                                <img src="images/HR.jpg" alt="Profile" class="profile-pic">
+                                <h3>Charles Whitaker</h3>
+                                <p>Human Resources Manager</p>
+                                <p><strong>Employee ID:</strong> 256789120155</p>
+                            </div>
                         </div>
-                    </div>
 
             </header>
 
@@ -151,7 +169,7 @@
                             <img src="images/profile.jpg" alt="User">
                             <div class="message-content">
                                 <span class="name">Sophia Bennett</span>
-                                <span class="text">Sophia Bennett has sent you a file.</span>
+                                <span class="text">Dear Charles Whitake.</span>
                             </div>
                             <span class="time">6:40 AM</span>
                         </div>
@@ -159,7 +177,7 @@
                             <img src="images/profile.jpg" alt="User">
                             <div class="message-content">
                                 <span class="name">Sophia Bennett</span>
-                                <span class="text">Sophia Bennett has sent you a file.</span>
+                                <span class="text">Dear Charles Whitake</span>
                             </div>
                             <span class="time">6:40 AM</span>
                         </div>
@@ -167,7 +185,7 @@
                             <img src="images/profile.jpg" alt="User">
                             <div class="message-content">
                                 <span class="name">Sophia Bennett</span>
-                                <span class="text">Sophia Bennett has sent you a file.</span>
+                                <span class="text">Dear Charles Whitake</span>
                             </div>
                             <span class="time">6:40 AM</span>
                         </div>
@@ -175,7 +193,7 @@
                             <img src="images/profile.jpg" alt="User">
                             <div class="message-content">
                                 <span class="name">Sophia Bennett</span>
-                                <span class="text">Sophia Bennett has sent you a file.</span>
+                                <span class="text">Dear Charles Whitake</span>
                             </div>
                             <span class="time">6:40 AM</span>
                         </div>
@@ -183,14 +201,14 @@
                             <img src="images/profile.jpg" alt="User">
                             <div class="message-content">
                                 <span class="name">Sophia Bennett</span>
-                                <span class="text">Sophia Bennett has sent you a file.</span>
+                                <span class="text">Dear Charles Whitake</span>
                             </div>
                             <span class="time">6:40 AM</span>
                         </div>                        <div class="message-item">
                             <img src="images/profile.jpg" alt="User">
                             <div class="message-content">
                                 <span class="name">Sophia Bennett</span>
-                                <span class="text">Sophia Bennett has sent you a file.</span>
+                                <span class="text">Dear Charles Whitake</span>
                             </div>
                             <span class="time">6:40 AM</span>
                         </div>
@@ -198,7 +216,7 @@
                             <img src="images/profile.jpg" alt="User">
                             <div class="message-content">
                                 <span class="name">Sophia Bennett</span>
-                                <span class="text">Sophia Bennett has sent you a file.</span>
+                                <span class="text">Dear Charles Whitake</span>
                             </div>
                             <span class="time">6:40 AM</span>
                         </div>
@@ -206,7 +224,7 @@
                             <img src="images/profile.jpg" alt="User">
                             <div class="message-content">
                                 <span class="name">Sophia Bennett</span>
-                                <span class="text">Sophia Bennett has sent you a file.</span>
+                                <span class="text">Dear Charles Whitake</span>
                             </div>
                             <span class="time">6:40 AM</span>
                         </div>
@@ -214,7 +232,7 @@
                             <img src="images/profile.jpg" alt="User">
                             <div class="message-content">
                                 <span class="name">Sophia Bennett</span>
-                                <span class="text">Sophia Bennett has sent you a file.</span>
+                                <span class="text">Dear Charles Whitake</span>
                             </div>
                             <span class="time">6:40 AM</span>
                         </div>
@@ -222,7 +240,7 @@
                             <img src="images/profile.jpg" alt="User">
                             <div class="message-content">
                                 <span class="name">Sophia Bennett</span>
-                                <span class="text">Sophia Bennett has sent you a file.</span>
+                                <span class="text">Dear Charles Whitake</span>
                             </div>
                             <span class="time">6:40 AM</span>
                         </div>

@@ -49,4 +49,9 @@ function renderCalendar(year, month) {
 
         calendarGrid.appendChild(dayElement);
 }
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".menu-item span").forEach((el) => {
+        el.style.textDecoration = "none";
+    });
+});
 

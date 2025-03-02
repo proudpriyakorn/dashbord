@@ -57,14 +57,14 @@ body {
 }
 
 .menu-item {
-    display: flex;
-    align-items: center;
+    font-weight: 700;
+    display: flex; /* Align icon and text horizontally */
+    align-items: center; /* Center vertically */
+    gap: 10px; /* Space between icon and text */
     padding: 15px;
     color: #F5EFE7;
     cursor: pointer;
-    transition: 0.3s;
-    font-weight: 600;
-    border-radius: 10px;
+    text-decoration: none; /* Ensure it behaves like a button */
 }
 
 .menu-item img {
