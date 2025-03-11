@@ -1,0 +1,14 @@
+{
+    "folders": [
+        {
+            "path": "../post-it-notes"
+        },
+        {
+            "path": "../../Downloads/bit-chat02"
+        }
+    ],
+    "settings": {
+        "git.ignoreLimitWarning": true,
+        "liveServer.settings.multiRootWorkspaceName": "bit-chat02"
+    }
+}

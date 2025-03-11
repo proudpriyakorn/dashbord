@@ -11,6 +11,7 @@ body {
     height: 100vh;
     background: #F6FDFF;
 }
+
 /* ========================
    SIDEBAR STYLES
 ======================== */
@@ -22,19 +23,18 @@ body {
     padding: 20px;
 }
 .profile-dropdown {
-    display: none; /* Initially hidden */
-    position: absolute;
-    top: 70px; /* Adjust positioning */
+    display: none; /* ซ่อน dropdown ตอนเริ่มต้น */
+    position: fixed; /* ใช้ fixed แทน absolute */
+    top: 80px; /* ปรับตำแหน่งให้อยู่ต่ำกว่าปุ่ม */
     right: 20px;
     width: 323px;
-    height: 200px;
-    flex-shrink: 0;
+    height: auto;
     background: #F0F5FF;
     border: 3px solid #112D4E;
     border-radius: 10px 0px 10px 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 15px;
-    z-index: 1000;
+    z-index: 2000; /* ทำให้ dropdown อยู่ด้านบน */
     transition: right 0.5s ease-in-out;
 }
 
@@ -76,36 +76,45 @@ body {
     color: #112D4E;
     transition: right 0.3s ease-in-out;
 }
+.profile-dropdown.active {
+    display: block; /* แสดง dropdown เมื่อมีคลาส active */
+}
 
 /* Profile Section (No Change) */
 .hr-section {
-    position: absolute;
-    top: 10px;
+    position: fixed; /* Fix HR section at the top */
+    top: 0;
     right: 20px;
     display: flex;
     align-items: center;
     background: #F6FDFF;
-    padding: 5px;
-    cursor: pointer;
+    padding: 10px;
+    z-index: 1100; /* สูงกว่า header */
+    height: 60px; /* กำหนดความสูงเพื่อกันพื้นที่ */
+    width: 1000px;
 }
 
 .hr-section img {
-    width: 50px;
+    width:50px;
     height: 50px;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .hr-info h3 {
     font-size: 16px;
     color: #112D4E;
+    margin-left: 750px;
 }
 
 .hr-info p {
     font-size: 12px;
     color: #3F72AF;
     font-weight: 549;
+  font-weight: 549;
+  margin-left: 750px;
 }
+
 /* Logo Section */
 .logo {
     text-align: center;
@@ -177,80 +186,49 @@ body {
     margin-left: -17px;
 }
 
-
 /* Main Content */
 .main-content {
     flex: 1;
-    margin-top: 80px;
-    padding: 10px 60px;
+    padding: 20px;
     overflow-y: auto;
-    
 }
 
-/* Header */
 .header {
+    display: flex;
     position: sticky;
-    z-index: 1000;
-    display: flex;
-    padding: 15px 0;
-    z-index: 1000;
-    top: 0;
-    align-items: flex-start; /* Aligns items to the top */
-    gap: 10px; /* Keeps spacing between elements */
-    margin-bottom: -170px; /* Adjust spacing below the header */
-    width: 100%; /* ให้ยาวเต็ม */
-    background: #F6FDFF; /* ใช้สีพื้นหลังเดียวกับโปรไฟล์ */
-    padding: 15px 20px;
-    border-radius: 10px; /* ทำให้โค้งมนเหมือนโปรไฟล์ */
-    display: flex;
+    top: 30px;
     align-items: center;
     justify-content: space-between;
+    background: #F6FDFF;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 
 }
-.header-left {
+
+
+.header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #112D4E;
+}
+
+.action-container {
     display: flex;
     align-items: center;
     gap: 15px;
-    background: #F6FDFF; /* ให้เหมือนโปรไฟล์ */
-    padding: 10px 15px;
-    border-radius: 10px;
 }
-
-.header h2 {
-    font-family: Arial, sans-serif;
-    font-size: 24px;
-    color: #112D4E;
-    font-weight: 800;
-    margin-bottom: 200px;
-}
-.header-container {
-    width: 100vw; /* ทำให้กว้างเต็มจอ */
-    background: #F6FDFF; /* สีเดียวกับโปรไฟล์ */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้นุ่มขึ้น */
-}
-
-.header-content {
-    max-width: 1200px; /* จำกัดความกว้าง */
-    margin: 0 auto; /* จัดให้อยู่กึ่งกลาง */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 
 .add-employee {
     background: #3F72AF;
     color: #fff;
-    border: none;
-    padding: 8px 16px; /* Adjust padding for better alignment */
+    padding: 8px 16px;
     border-radius: 8px;
     font-size: 14px;
     cursor: pointer;
     display: flex;
-    align-items: center;
-    margin-top: 3px; /* Slight downward adjustment */
+    border: none;
+    margin-right: 400px;
 }
 
 .add-employee:hover {
@@ -258,59 +236,41 @@ body {
 }
 
 .search-box {
-    margin-left: auto; 
-    width: 400px; /* Keep width the same */
-    font-family: Arial, sans-serif;
     display: flex;
-    margin-top: 5px;
-    background: #003366; /* Dark blue background */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 10px; /* Rounded corners */
-    overflow: hidden; /* Ensure a clean look */
-    height: 35px; /* Reduce height */
-
+    background: #003366;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 35px;
 }
 
 .search-box input {
-    font-family: Arial, sans-serif;
-    color: white; /* Text color */
+    flex: 1;
     border: none;
     outline: none;
-    flex: 4.5; /* Keep it flexible */
-    padding: 5px 10px; /* Adjust padding to fit smaller height */
-    background: #003366; /* Match background */
-    font-size: 10px; /* Reduce font size slightly */
+    padding: 5px 10px;
+    background: #003366;
+    color: white;
 }
 
 .search-box input::placeholder {
-    color: #d0d0d0; /* Light gray placeholder */
-    font-size: 10px; /* Match input text size */
+    color: #d0d0d0;
 }
 
 .search-box button {
-    background: #003366; /* Match input */
+    background: #003366;
     border: none;
-    outline: none;
-    padding: 5px 10px; /* Adjust padding */
+    padding: 5px 10px;
     cursor: pointer;
-    transition: 0.3s;
-    height: 80%; /* Ensure button matches input height */
 }
-
-.search-box button:hover {
-    background: #002855; /* Slightly darker on hover */
-}
-
-
 
 /* Employee Grid */
 .employee-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    padding: 40px 0;
 }
 
-/* Employee Card */
 .employee-card {
     background: #fff;
     border-radius: 16px;
@@ -320,8 +280,8 @@ body {
 }
 
 .employee-card img {
-    width: 250px; 
-    height: 300px;
+    width: 200px;
+    height: 250px;
     object-fit: cover;
     border-radius: 12px;
     margin-bottom: 10px;
